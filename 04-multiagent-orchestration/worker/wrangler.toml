@@ -1,0 +1,14 @@
+name = "task-hub"
+main = "src/index.js"
+compatibility_date = "2026-09-08"
+compatibility_flags = ["nodejs_compat"]
+
+# KV binding — existing "arman" namespace, or replace with your own.
+# Create: wrangler kv namespace create TASKS
+kv_namespaces = [
+  { binding = "TASKS", id = "f9f8ee9a1fda428d85e096d51bf5394a" }
+]
+
+# The hub is publicly reachable so the controller can enqueue from anywhere.
+[observability]
+enabled = true

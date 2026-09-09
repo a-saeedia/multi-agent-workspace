@@ -1,0 +1,8 @@
+node_modules/
+.playwright-mcp/
+test-media/tmp/
+out-*/
+
+# wrangler local cache (never commit)
+**/.wrangler/
+

@@ -1,0 +1,9 @@
+{
+  "tasks": [
+    { "type": "llm_infer", "payload": { "text": "hello", "latencyMs": 20 } },
+    { "type": "llm_infer", "payload": { "text": "world", "latencyMs": 30 } },
+    { "type": "video_analyze", "payload": { "frames": 12, "latencyMs": 10 } },
+    { "type": "llm_infer", "payload": { "text": "orchestration", "latencyMs": 15 } },
+    { "type": "video_analyze", "payload": { "frames": 3, "latencyMs": 5 } }
+  ]
+}

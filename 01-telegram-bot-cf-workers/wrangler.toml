@@ -1,0 +1,22 @@
+name = "telegram-funnel-bot"
+main = "src/index.js"
+compatibility_date = "2026-09-08"
+compatibility_flags = ["nodejs_compat"]
+
+# KV for user/state — reuse the existing "arman" namespace, or create your own:
+#   wrangler kv namespace create STATE   then paste the id here.
+kv_namespaces = [
+  { binding = "STATE", id = "f9f8ee9a1fda428d85e096d51bf5394a" }
+]
+
+# Secrets (set via: wrangler secret put BOT_TOKEN):
+#   BOT_TOKEN   — Telegram bot token from @BotFather
+#   SECRET      — (optional) webhook secret token
+
+# Workers AI binding (free tier includes @cf models). Enables /ai, /chat, /imagine, voice.
+[ai]
+binding = "AI"
+
+# Weekly trend engine: every Monday 10:00 UTC (13:30 Tehran) research + post to channel.
+[triggers]
+crons = ["0 10 * * 1"]

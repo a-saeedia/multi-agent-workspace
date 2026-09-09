@@ -1,0 +1,5 @@
+async () => {
+  const b64 = "iVBORw0KGgoAAAANSUhEUgAAAEAAAAAwCAIAAAAuKetIAAAACXBIWXMAAAABAAAAAQBPJcTWAAABbElEQVR4nO2asXLCMAxApTvuYCtjV7Z+ZvsH/Q3+ipGxbDC5TpQWbEuJA0nk+PTOAziJrId15hIHQcAJ/dgecBgfRymO44+wvT5sEnggn43Q34c4yMtgYzsu+DgBdNIPOhkOkQbKPH+EQH7Q1/EamcPlCiyZPZHpkCWwfPZEjsOwgFb2xKDDgIBu9kS/wzPLaFH0CZTw8xPN2iokIwqUkz3R1hGTUqUlNP8f7jOwk1DjDLClVgjpJNQ4A+siFii5foioiqqbgdVhAtqYgDYmoI0JaGMC2piANrGAdPNfDnZHVhiMQMlVxDxWaTrek3ZE9/f5+gZnuLdPF3z17QZ7LkTXEJILwra7BBd8JSG28OPP66Lgd3R9jSW0LkxAGxPQZtM8RqcVKeR/vd0BHB5WX+m5e9+rBrQcCudfAU5tY+O3+yx+md47+OAFhHHDJLK3nadlsn1i0HCYeKcelnWY5V0J6BxmfFsFxm8u/gKajJ/9ym/TPAAAAABJRU5ErkJggg==";
+  const r = await cloudflare.request({ method: "POST", path: "/accounts/28290e9dd8d7b066c3f2c1dd7ff12fc3/ai/run/@cf/llava-hf/llava-1.5-7b-hf", body: { image: [b64], prompt: "Reply with ONLY what object/pattern is in this image, one word." } });
+  return r;
+}
