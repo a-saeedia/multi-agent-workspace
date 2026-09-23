@@ -11,7 +11,7 @@ is blocked only by lack of a write-capable Cloudflare token.
 | P01 Telegram Bot | ✅ src/ + scripts/ | ✅ 10/10 harness | ✅ deployed (needs BOT_TOKEN secret) | https://telegram-funnel-bot.darkestjokepossible.workers.dev |
 | P03 City-World Animation | not started (out of scope this run) | — | — | — |
 
-> **Deploy UNBLOCKED** — user provided write-capable `CLOUDFLARE_API_TOKEN` (cfut_..., 2026-09-08). All three Workers deployed live.
+> **Deploy UNBLOCKED** — write-capable Cloudflare API token supplied (2026-09-08). All three Workers deployed live.
 
 ## Live verification (all PASSED)
 - P04 full task lifecycle on live hub (enqueue→claim→complete→health queue=0) ✅
@@ -32,7 +32,7 @@ is blocked only by lack of a write-capable Cloudflare token.
 - R2 not enabled on account (error 10042) — used KV instead. Queues create also blocked → KV-backed task queue design adopted.
 - ffmpeg `-c copy` trim: `-ss` must precede `-i`; output-seek copy yields audio-only files (video:0KiB).
 - ffmpeg is at `C:\Users\User\tools\ffmpeg\ffmpeg.exe` (no PATH); node at `C:\Users\User\tools\node\node.exe`.
-- Template-literal `${accountId}` in cloudflare_execute gets URL-encoded and fails (7003) — hardcode `28290e9dd8d7b066c3f2c1dd7ff12fc3`.
+- Template-literal `${accountId}` in cloudflare_execute gets URL-encoded and fails (7003) — hardcode `<account-id>`.
 
 ## Runbook (local, no Cloudflare)
 ```
